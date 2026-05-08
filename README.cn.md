@@ -1,37 +1,44 @@
-# HTML Hello
+# Social Commerce Dashboard (HTML + Tailwind CSS v4)
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/html-hello.git)
+该项目已重置为仅使用 HTML 与本地编译的 Tailwind CSS v4（不使用 CDN）。
 
-为使用 [gitpod.io](gitpod.io) 代码编辑器 4Geeks Academy 学生提供的最基础的样板。
+## 环境要求
 
-[![How to open html/css preview of my project in gitpod](https://github.com/4GeeksAcademy/Templates-Boilerplates/blob/master/assets/hello-html-intro.png?raw=true)](https://youtu.be/dfbDCMu_p-0)
+- Node.js 18+
+- Python 3（可选，用于运行 `server.py`）
 
-## 接下来怎么做？
+## 安装
 
-创建一个具有 [基本 HTML 页面结构](http://content.breatheco.de/lesson/what-is-html-learn-html#page-structure) 的 `index.html` 文件并通过使用以下命令，实时预览 Web 服务器提供的 HTML 页面：
-
-```sh
-$ pip3 install flask && python3 server.py
+```bash
+npm install
+npm run build:css
 ```
 
-- 您可以根据需要创建任意数量的 HTML 文件
-- 您还可以使用放置在 `<head></head>` 标签之间的 `<link>` 标签创建 CSS 文件并将它们导入您的网站，如下所示：
+以上命令会从 `src/input.css` 生成 `styles.css`。
 
-```html
-<head>
-  ...
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
+## 开发
+
+1. 启动 Tailwind 监听：
+
+```bash
+npm run watch:css
 ```
 
-- 如果你想使用 Tailwind CSS，也可以选择在同一个 `<head>` 中通过官方的 Tailwind CSS v4 CDN 引入：
+2. 启动本地服务器：
 
-```html
-<head>
-  ...
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
+```bash
+python3 server.py
 ```
+
+3. 打开 `http://localhost:3000`。
+
+## 目录说明
+
+- `index.html`：移动优先的响应式仪表盘页面
+- `src/input.css`：Tailwind v4 输入文件
+- `styles.css`：编译后的 CSS
+- `package.json`：脚本与依赖
+
+## 说明
+
+不使用 `cdn.tailwindcss.com`，也不包含 Tailwind v3 配置方式。

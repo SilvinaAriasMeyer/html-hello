@@ -1,44 +1,44 @@
-# HTML Hello
+# Dashboard Social Commerce (HTML + Tailwind CSS v4)
 
-El boilerplate más básico para cualquier estudiante de 4Geeks Academy, empieza tu primer sitio web desde cero.
+Proyecto reiniciado para usar solo HTML y Tailwind CSS v4 compilado localmente, sin CDN.
 
-> Tienes un video tutorial sobre [cómo usar esta plantilla para crear tu primer sitio web aquí](https://youtu.be/dfbDCMu_p-0).
+## Requisitos
 
-## ¿Qué hacer a continuación?
+- Node.js 18+
+- Python 3 (opcional para `server.py`)
 
-Crea un archivo `index.html` con [la estructura básica de HTML](https://4geeks.com/es/lesson/what-is-html-learn-html-es#estructura-de-pgina) y ve el resultado en vivo corriendo un servidor web utilizando el siguiente comando:
+## Instalacion
 
 ```bash
-$ pip3 install flask && python3 server.py
+npm install
+npm run build:css
 ```
 
-- Puedes crear tantos archivos HTML cómo desees.
-- También puedes crear archivos CSS e importarlos en tu página web utilizando una etiqueta `<link>` ubicándola entre las etiquetas `<head></head>`, de la siguiente manera:
+Con esto se genera `styles.css` a partir de `src/input.css`.
 
-```html
-<head>
-  ...
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
+## Flujo de trabajo
+
+1. Ejecuta Tailwind en modo watch:
+
+```bash
+npm run watch:css
 ```
 
-- Si deseas usar Tailwind CSS, agrégalo de forma opcional mediante el CDN oficial de Tailwind CSS v4 dentro del mismo `<head>`:
+2. Levanta el servidor local:
 
-```html
-<head>
-  ...
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
+```bash
+python3 server.py
 ```
 
+3. Abre `http://localhost:3000`.
 
-## Agradecimientos
+## Estructura
 
-Esta y otras plantillas son utilizadas para [aprender a programar](https://4geeksacademy.com/es/aprender-a-programar/aprender-a-programar-desde-cero) por parte de los alumnos de 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp). 
+- `index.html`: dashboard responsive (mobile-first).
+- `src/input.css`: entrada para Tailwind v4.
+- `styles.css`: salida compilada.
+- `package.json`: scripts y dependencias.
 
-Realizado por [Alejandro Sánchez](https://twitter.com/alesanchezr) y muchos otros contribuyentes. 
+## Nota
 
-Conoce más sobre nuestros [Cursos de Programación](https://4geeksacademy.com/es/curso-de-programacion-desde-cero/?lang=es) para convertirte en [Full Stack Developer](https://4geeksacademy.com/es/desarrollador-full-stack/desarrollador-full-stack), o nuestro [Data Science Bootcamp](https://4geeksacademy.com/es/coding-bootcamps/curso-datascience-machine-learning).
+No se usa `cdn.tailwindcss.com` ni configuracion de Tailwind v3.

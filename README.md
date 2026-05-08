@@ -1,41 +1,44 @@
-# HTML Hello
+# Social Commerce Dashboard (HTML + Tailwind CSS v4)
 
-The most basic boilerplate for any 4Geeks Academy student, start your very first website from scratch.
+Proyecto reiniciado para usar unicamente HTML semantico y Tailwind CSS v4 compilado en local (sin CDN).
 
-> There is a video tutorial on [how to use this template to create your very first website here](https://youtu.be/dfbDCMu_p-0).
+## Requisitos
 
-## What to do next?
+- Node.js 18+
+- Python 3 (opcional, solo para correr `server.py`)
 
-Create an `index.html` file with the [basic HTML structure](http://4geeks.com/lesson/what-is-html-learn-html#page-structure) and see it live by running a web-server using the following command:
+## Instalacion
 
 ```bash
-$ pip3 install flask && python3 server.py
+npm install
+npm run build:css
 ```
 
-- You can create as many HTML files as you want.
-- You can also create CSS files and import them into your website using a `<link>` tag placed between the `<head></head>` tags, like this:
+Esto genera `styles.css` desde `src/input.css` usando Tailwind v4 CLI.
 
-```html
-<head>
-  ...
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
+## Desarrollo
+
+1. En una terminal, recompila CSS en modo watch:
+
+```bash
+npm run watch:css
 ```
 
-- If you want to use Tailwind CSS, add it optionally via the official Tailwind CSS v4 CDN inside the same `<head>`:
+2. En otra terminal, levanta el servidor:
 
-```html
-<head>
-  ...
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
+```bash
+python3 server.py
 ```
 
-### Contributors
+3. Abre `http://localhost:3000`.
 
-This template was built as part of the [Full Stack Developer course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer) at [4Geeks Academy Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and [many other contributors](https://github.com/4GeeksAcademy/html-hello/graphs/contributors).
+## Estructura
 
-You can find other templates and resources like this at the [school's GitHub page](https://github.com/4geeksacademy/).
+- `index.html`: dashboard responsive mobile-first.
+- `src/input.css`: entrada de Tailwind v4 (`@import "tailwindcss";`).
+- `styles.css`: CSS compilado.
+- `package.json`: scripts y dependencias de Tailwind v4.
+
+## Nota importante
+
+Esta base no usa `cdn.tailwindcss.com` ni la sintaxis/configuracion de Tailwind v3.

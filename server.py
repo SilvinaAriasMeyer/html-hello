@@ -7,10 +7,43 @@ except ImportError:
     exit(1)
 
 import os, subprocess
+import socket
 
 static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), './')
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 #disable cache
+
+
+def _is_port_available(port):
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        try:
+            sock.bind(("0.0.0.0", port))
+            return True
+        except OSError:
+            return False
+
+
+def _select_server_port():
+    requested_port = os.getenv("PORT")
+    candidates = []
+
+    if requested_port and requested_port.isdigit():
+        candidates.append(int(requested_port))
+
+    if 3000 not in candidates:
+        candidates.append(3000)
+
+    # Try a small range to keep the app available even if one port is occupied.
+    for port in range(3001, 3011):
+        if port not in candidates:
+            candidates.append(port)
+
+    for port in candidates:
+        if _is_port_available(port):
+            return port
+
+    raise RuntimeError("No hay puertos disponibles entre 3000 y 3010")
 
 # Serving the index file
 @app.route('/', methods=['GET'])
@@ -34,4 +67,6 @@ def serve_any_other_file(path):
     response.cache_control.max_age = 0 # avoid cache memory
     return response
 
-app.run(host='0.0.0.0',port=3000, debug=True, extra_files=['./',])
+server_port = _select_server_port()
+print(f"Servidor listo en http://localhost:{server_port}")
+app.run(host='0.0.0.0', port=server_port, debug=True, use_reloader=False, extra_files=['./'])

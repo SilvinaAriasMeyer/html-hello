@@ -1,0 +1,37 @@
+Bloque,Subbloque,Metrica,Plataforma,Producto,Fecha inicio,Fecha fin,Valor,Unidad,Tendencia,Detalle
+KPI,Ingresos,Revenue total,Global,Todos,N/A,N/A,14760,EUR,Positiva,Comisiones y ventas acumuladas
+KPI,Ingresos,MRR,Global,Suscripciones,N/A,N/A,5420,EUR,Positiva,Facturacion mensual recurrente
+KPI,Ingresos,Precio medio de venta,Global,Buzos Zapatos Carteras,N/A,N/A,83.33,EUR,Estable,Promedio de productos promocionados
+KPI,Engagement,Tasa de engagement,Global,Todos,N/A,N/A,8.2,Porcentaje,Positiva,Interacciones sobre alcance total
+KPI,Engagement,Interacciones totales,Global,Todos,N/A,N/A,96430,Eventos,Positiva,Me gusta comentarios compartidos guardados
+KPI,Engagement,Tasa de conversion,Global,Todos,N/A,N/A,4.9,Porcentaje,Positiva,Conversion final del funnel
+KPI,Eficiencia,Coste por resultado,Global,Todos,N/A,N/A,2.3,EUR,Estable,CPR promedio por conversion
+KPI,Eficiencia,Margen,Global,Todos,N/A,N/A,31,Porcentaje,Estable,Margen promedio de operaciones
+KPI,Eficiencia,Tiempo medio de gestion,Global,Todos,N/A,N/A,3.2,Horas,Positiva,Tiempo promedio de respuesta
+Drivers,Funnel,Impresiones,Global,Todos,N/A,N/A,1280000,Eventos,Estable,Parte superior del funnel
+Drivers,Funnel,Clics,Global,Todos,N/A,N/A,108800,Eventos,Positiva,Usuarios que hicieron clic
+Drivers,Funnel,Leads,Global,Todos,N/A,N/A,25400,Leads,Positiva,Leads cualificados
+Drivers,Funnel,Ventas,Global,Todos,N/A,N/A,6272,Ventas,Positiva,Conversion final
+Drivers,Plataforma,Conversiones,Instagram,Todos,N/A,N/A,2840,Conversiones,Positiva,Plataforma con mejor resultado
+Drivers,Plataforma,Conversiones,TikTok,Todos,N/A,N/A,2150,Conversiones,Estable,Rendimiento intermedio
+Drivers,Plataforma,Conversiones,YouTube,Todos,N/A,N/A,1020,Conversiones,Negativa,Caida de conversion reciente
+Drivers,Plataforma,Conversiones,Facebook,Todos,N/A,N/A,262,Conversiones,Estable,Baja participacion
+Drivers,Producto,Comision total,Global,Zapatos,N/A,N/A,43200,EUR,Positiva,Mejor producto por comision
+Drivers,Producto,Comision total,Global,Carteras,N/A,N/A,30240,EUR,Positiva,Segundo mejor producto
+Drivers,Producto,Comision total,Global,Buzos,N/A,N/A,20640,EUR,Estable,Tercer producto en ranking
+Operaciones,Campanas,Conversiones,Multiplataforma,Zapatos + Carteras,2026-04-03,2026-04-10,2480,Conversiones,Positiva,ROI 3.0x
+Operaciones,Campanas,Conversiones,Multiplataforma,Buzos + Zapatos,2026-04-11,2026-04-18,2160,Conversiones,Positiva,CTR 8.8%
+Operaciones,Campanas,Conversiones,Multiplataforma,Todos,2026-04-19,2026-04-30,1632,Conversiones,Estable,ROI 2.6x
+Operaciones,Alertas,Anomalia de conversion,YouTube,Todos,N/A,N/A,-21,Porcentaje,Negativa,Caida fuerte en 72 horas
+Operaciones,Alertas,Pico de conversion,Instagram,Todos,N/A,N/A,27,Porcentaje,Positiva,Subida fuerte en 24 horas
+Operaciones,Alertas,Anomalia de coste,TikTok,Todos,N/A,N/A,0,Indice,Negativa,Coste por resultado por encima de media
+Operaciones,Listados,Top productos,Global,Zapatos,N/A,N/A,1,Ranking,Positiva,Producto lider
+Operaciones,Listados,Top productos,Global,Carteras,N/A,N/A,2,Ranking,Positiva,Producto secundario
+Operaciones,Listados,Top productos,Global,Buzos,N/A,N/A,3,Ranking,Estable,Producto estable
+Operaciones,Listados,Top plataformas,Instagram,Todos,N/A,N/A,1,Ranking,Positiva,Plataforma lider
+Operaciones,Listados,Top plataformas,TikTok,Todos,N/A,N/A,2,Ranking,Estable,Segunda plataforma
+Operaciones,Listados,Top plataformas,YouTube,Todos,N/A,N/A,3,Ranking,Negativa,Tercera plataforma
+Operaciones,Listados,Top campanas,Multiplataforma,Zapatos + Carteras,N/A,N/A,1,Ranking,Positiva,Spring Push
+Operaciones,Listados,Top campanas,Multiplataforma,Buzos + Zapatos,N/A,N/A,2,Ranking,Positiva,Creator Week
+Operaciones,Listados,Top campanas,Multiplataforma,Todos,N/A,N/A,3,Ranking,Estable,Weekend Boost
+Operaciones,Listados,Oportunidad de mejora,YouTube,Todos,N/A,N/A,1,Prioridad,Positiva,Mejorar conversion en Shorts
