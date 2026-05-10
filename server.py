@@ -14,13 +14,7 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 #disable cache
 port = int(os.environ.get('PORT', '3000'))
 
 def default_dashboard_file():
-    if port == 3000:
-        return 'dashboard-comercial.html'
-    if port == 3001:
-        return 'dashboard-social.html'
-    if port == 3002:
-        return 'index.html'
-    return 'index.html'
+    return 'dashboard-social.html'
 
 # Serving the index file
 @app.route('/', methods=['GET'])
@@ -33,16 +27,13 @@ def serve_dir_directory_index():
     dashboard_file = default_dashboard_file()
     if os.path.exists(dashboard_file):
         return send_from_directory(static_file_dir, dashboard_file)
-    if os.path.exists("index.html"):
-        return send_from_directory(static_file_dir, 'index.html')
-    else:
-        return "<h1 align='center'>404</h1><h2 align='center'>Missing dashboard file</h2><p align='center'><img src='https://github.com/4GeeksAcademy/html-hello/blob/main/.vscode/rigo-baby.jpeg?raw=true' /></p>"
+    return "<h1 align='center'>404</h1><h2 align='center'>Missing dashboard-social.html file</h2><p align='center'><img src='https://github.com/4GeeksAcademy/html-hello/blob/main/.vscode/rigo-baby.jpeg?raw=true' /></p>"
 
 # Serving any other image
 @app.route('/<path:path>', methods=['GET'])
 def serve_any_other_file(path):
     if not os.path.isfile(os.path.join(static_file_dir, path)):
-        path = os.path.join(path, 'index.html')
+        return "<h1 align='center'>404</h1><h2 align='center'>File not found</h2>", 404
     response = send_from_directory(static_file_dir, path)
     response.cache_control.max_age = 0 # avoid cache memory
     return response
